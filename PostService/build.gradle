@@ -1,15 +1,1 @@
-plugins {
-    id 'java'
-}
-
-group 'com.enes'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-
-}
 
