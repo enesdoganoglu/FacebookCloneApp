@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String id;
+    Long id;
     Long authid;
     String username;
     String email;
