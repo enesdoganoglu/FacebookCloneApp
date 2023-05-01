@@ -2,15 +2,10 @@ server:
   port: 9093
 
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/FacebookUserProfileDB
-    username: postgres
-    password: 12345
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: FacebookDB
+      username: Java7User
+      password: root

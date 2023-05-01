@@ -8,7 +8,7 @@ import com.enes.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserProfileService extends ServiceManager<UserProfile,Long> {
+public class UserProfileService extends ServiceManager<UserProfile,String> {
     private final IUserProfileRepository repository;
 
     public UserProfileService(IUserProfileRepository repository) {

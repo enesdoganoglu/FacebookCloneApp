@@ -40,7 +40,7 @@ allprojects{
         implementation libs.lombok
         annotationProcessor libs.lombok
         implementation libs.springBootValidation
-        implementation libs.postgresql
+
         implementation libs.swagger
         implementation libs.mapstruct
         annotationProcessor libs.mapstructProcessor

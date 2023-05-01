@@ -4,6 +4,6 @@ buildscript {
     }
 }
 dependencies {
-    implementation libs.springBootDataJpa
+    implementation libs.springBootDataMongoDB
 }
 
