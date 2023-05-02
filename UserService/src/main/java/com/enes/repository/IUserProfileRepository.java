@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface IUserProfileRepository extends MongoRepository<UserProfile,String> {
 
-    //Optional<UserProfile> findOptionalByAuthid(Long authid);
+    Optional<UserProfile> findOptionalByAuthid(Long authid);
 
 }
