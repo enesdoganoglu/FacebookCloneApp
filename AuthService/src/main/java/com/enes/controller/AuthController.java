@@ -8,6 +8,7 @@ import com.enes.exception.AuthException;
 import com.enes.exception.ErrorType;
 import com.enes.repository.entity.Auth;
 import com.enes.service.AuthService;
+import com.enes.utility.TokenCreator;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
@@ -22,9 +23,12 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
+    private final TokenCreator tokenCreator;
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody @Valid LoginRequestDto dto){
-        if(!authService.doLogin(dto))
+
+            Optional<Auth> auth = authService.doLogin(dto);
+        if(auth.isEmpty())
             return ResponseEntity.ok(LoginResponseDto.builder()
                     .statusCode(4000)
                     .message("Kullanıcı adı veya şifre hatalı")
@@ -32,7 +36,7 @@ public class AuthController {
 
         return ResponseEntity.ok(LoginResponseDto.builder()
                 .statusCode(2001)
-                .message("Giriş işlemi başarılı")
+                .message(tokenCreator.createToken(auth.get().getId()))
                 .build());
     }
 

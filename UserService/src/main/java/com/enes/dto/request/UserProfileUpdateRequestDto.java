@@ -14,7 +14,9 @@ import javax.validation.constraints.Size;
 @Data
 @Builder
 public class UserProfileUpdateRequestDto {
-    Long authid;
+    @NotEmpty
+    @Size(min = 5)
+    String token;
     String name;
     String surname;
     String phone;

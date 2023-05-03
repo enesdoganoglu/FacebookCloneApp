@@ -27,12 +27,10 @@ public class AuthService extends ServiceManager<Auth,Long> {
         this.userProfileManager = userProfileManager;
     }
 
-    public boolean doLogin(LoginRequestDto dto){
-        Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(
+    public Optional<Auth> doLogin(LoginRequestDto dto){
+        return repository.findOptionalByUsernameAndPassword(
                 dto.getUsername(),dto.getPassword()
         );
-        if(auth.isEmpty()) return false;
-        return true;
     }
 
     public void register(RegisterRequestDto dto) {
