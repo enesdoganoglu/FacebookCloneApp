@@ -8,6 +8,7 @@ import com.enes.exception.AuthException;
 import com.enes.exception.ErrorType;
 import com.enes.repository.entity.Auth;
 import com.enes.service.AuthService;
+import com.enes.utility.JwtTokenManager;
 import com.enes.utility.TokenCreator;
 import lombok.RequiredArgsConstructor;
 
@@ -23,7 +24,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
-    private final TokenCreator tokenCreator;
+    private final JwtTokenManager jwtTokenManager;
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody @Valid LoginRequestDto dto){
 
@@ -36,7 +37,7 @@ public class AuthController {
 
         return ResponseEntity.ok(LoginResponseDto.builder()
                 .statusCode(2001)
-                .message(tokenCreator.createToken(auth.get().getId()))
+                .message(jwtTokenManager.createToken(auth.get().getId()).get())
                 .build());
     }
 

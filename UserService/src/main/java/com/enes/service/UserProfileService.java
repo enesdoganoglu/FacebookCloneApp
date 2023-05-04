@@ -7,6 +7,7 @@ import com.enes.exception.UserException;
 import com.enes.mapper.IUserProfileMapper;
 import com.enes.repository.IUserProfileRepository;
 import com.enes.repository.entity.UserProfile;
+import com.enes.utility.JwtTokenManager;
 import com.enes.utility.ServiceManager;
 import com.enes.utility.TokenCreator;
 import org.springframework.stereotype.Service;
@@ -16,14 +17,12 @@ import java.util.Optional;
 @Service
 public class UserProfileService extends ServiceManager<UserProfile,String> {
     private final IUserProfileRepository repository;
-
-    private final TokenCreator tokenCreator;
-
-    public UserProfileService(IUserProfileRepository repository, TokenCreator tokenCreator) {
+    private final JwtTokenManager jwtTokenManager;
+    public UserProfileService(IUserProfileRepository repository,
+                              JwtTokenManager jwtTokenManager) {
         super(repository);
         this.repository=repository;
-
-        this.tokenCreator = tokenCreator;
+        this.jwtTokenManager=jwtTokenManager;
     }
 
     public void save(UserProfileSaveRequestDto dto){
@@ -32,7 +31,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
 
 
     public void update(UserProfileUpdateRequestDto dto){
-        Optional<Long> authid = tokenCreator.getAuthId(dto.getToken());
+        Optional<Long> authid = jwtTokenManager.getIdFromToken(dto.getToken());
         if(authid.isEmpty())
             throw new UserException(ErrorType.ERROR_INVALID_TOKEN);
         Optional<UserProfile> userProfile = repository.findOptionalByAuthid(authid.get());

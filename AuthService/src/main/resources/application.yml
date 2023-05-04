@@ -14,3 +14,15 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+benim-uygulamam-icin-gerekli-parametreler:
+  ne-lazim:
+    bir: "gerekli olabilacek şeyler"
+    iki: 34422
+    uc: neolmazki
+
+
+my-application:
+  jwt:
+    secret-key: "wr@M=dU4rur8splp0LvuPR_bEThutusT&q9ni3restaNlH-kOgab&wIFRobraspi"
+    secret-key-env: ${SECRETKEY}

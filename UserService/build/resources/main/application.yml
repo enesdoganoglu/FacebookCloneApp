@@ -9,3 +9,7 @@ spring:
       database: FacebookDB
       username: Java7User
       password: root
+my-application:
+  jwt:
+    secret-key: "wr@M=dU4rur8splp0LvuPR_bEThutusT&q9ni3restaNlH-kOgab&wIFRobraspi"
+    secret-key-env: ${SECRETKEY}
