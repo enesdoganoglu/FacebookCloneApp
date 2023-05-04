@@ -3,5 +3,7 @@ include 'AuthService'
 include 'UserService'
 include 'PostService'
 include 'ChatService'
-
+include 'ConfigServer'
+include 'ConfigServer'
+include 'ConfigServerGit'
 

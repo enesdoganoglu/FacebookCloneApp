@@ -47,7 +47,7 @@ allprojects{
         implementation libs.springCloudOpenFeign
         implementation libs.javaJWT
         implementation libs.springCloudSleuth
-        implementation libs.springCloudZipkin
+        //implementation libs.springCloudZipkin
 
     }
 }

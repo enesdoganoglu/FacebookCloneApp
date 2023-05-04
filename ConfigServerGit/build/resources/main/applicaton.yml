@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/enesdoganoglu/java7configyml.git"
+          default-label: main
+          skip-ssl-validation: true
+          username: enesdoganoglu
+          password: "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"
