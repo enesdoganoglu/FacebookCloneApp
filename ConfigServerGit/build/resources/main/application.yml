@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8883
 
 spring:
   application:
@@ -8,8 +8,10 @@ spring:
     config:
       server:
         git:
-          uri: "https://github.com/enesdoganoglu/java7configyml.git"
+          uri: https://github.com/enesdoganoglu/java7configyml.git
           default-label: main
           skip-ssl-validation: true
           username: enesdoganoglu
-          password: ${GIT_JAVA7_PASSWORD}
+          password: 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
+
+
