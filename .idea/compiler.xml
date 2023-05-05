@@ -9,9 +9,11 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.3.Final/dce418bedafd71ff8dd2cef15006c0fee788b073/mapstruct-processor-1.5.3.Final.jar" />
         </processorPath>
         <module name="FacebookCloneApp.AuthService.main" />
-        <module name="FacebookCloneApp.UserService.main" />
         <module name="FacebookCloneApp.ChatService.main" />
+        <module name="FacebookCloneApp.ConfigServerGit.main" />
         <module name="FacebookCloneApp.main" />
+        <module name="FacebookCloneApp.ConfigServer.main" />
+        <module name="FacebookCloneApp.UserService.main" />
         <module name="FacebookCloneApp.PostService.main" />
       </profile>
     </annotationProcessing>

@@ -1,5 +1,5 @@
 server:
-  port: 8883
+  port: 8888
 
 spring:
   application:
@@ -12,6 +12,6 @@ spring:
           default-label: main
           skip-ssl-validation: true
           username: enesdoganoglu
-          password: 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
+          password: ${GIT_JAVA7_PASSWORD}
 
 
